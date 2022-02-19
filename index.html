@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Roksana Rębiewska</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/styles/main.css" />
+  <script src="assets/scripts/main.js" defer></script>
+  <script src="assets/scripts/portfolioBox.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <section id="main">
+    <nav>
+      <ul>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li><a href="#find">Find me</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1 data-aos="flip-up" data-aos-duration="1000">PORTFOLIO</h1>
+    </header>
+    <div class="div__btn--begin">
+    <button class="btn btn--begin" data-aos="fade-down" data-aos-offset="0" data-aos-duration="2000" data-aos-delay="1000">
+      <a href="#projects">Let's begin</a>
+      <br />
+      &#8595;
+    </button>
+  </div>
+  </section>
+  <section id="projects" data-aos="zoom-in" data-aos-offset="200" data-aos-duration="1000">
+    <h2>PROJECTS</h2>
+    <p class="projects--paragraph">Choose List View for more details about each project</p>
+    <div class="div__btn--view">
+      <button
+        class="btn btn--view"
+        id="grid-view-btn"
+      >
+        Grid View
+      </button>
+      <button
+        class="btn btn--view non-active"
+        id="list-view-btn"
+      >
+        List View
+      </button>
+    </div>
+    <section class="section__portfolio grid"  data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="1000">
+
+      <portfolio-box 
+        urlAddress="https://www.hellmanns.ro/"
+        title="Hellmann's Romania - page redesign"
+        description="Whole page redesign based on provided psd files. Included some custom JS components - hero banner on main page and categories boxes (displayed as carousel on mobile). Can be compared with Hellmanns.sk page - this was a starting point for this project."
+        imageUrl = "./assets/images/web-preview.jpg"
+        backgroundPosition="center"
+        >
+      </portfolio-box>
+      <portfolio-box 
+        urlAddress="https://www.plant-line.ro/"
+        title="Plant Line Romania - page launch"
+        description="Preparing Plant Line page including all content setup and full styling with Sass (SCSS syntax) in repository. All the styling made from the scratch based on general brief."
+        imageUrl = "./assets/images/web-preview3.png"
+        backgroundPosition="bottom"
+      >
+      </portfolio-box>
+      <portfolio-box 
+        urlAddress="https://www.knorr.pl/grillujiwygrywaj.html"
+        title="Knorr Poland - lottery page"
+        description="Lottery page implementation based on brief from the agency. Build with HTML and CSS. Form implemented in iframe, not available now due to lottery end."
+        imageUrl = "./assets/images/web-preview2.png"
+        backgroundPosition="top"
+        >
+      </portfolio-box>      
+      
+    </section>
+  </section>
+
+  <section id="find" data-aos="zoom-in" data-aos-offset="200" data-aos-duration="1000">
+    <div class="contact__box">
+      <h2>FIND ME</h2>
+      <section>
+        <a href="https://github.com/RoksanaRebiewska" target="_blank">
+          <img src="./assets/images/github-logo.svg" alt="GitHub Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/roksana-rebiewska/" target="_blank">
+          <img src="./assets/images/linkedin-logo.png" alt="Linkedin Logo">
+        </a>
+      </section>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>&#169; Roksana Rębiewska</p>
+  </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

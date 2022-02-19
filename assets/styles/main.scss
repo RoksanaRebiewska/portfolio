@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+$white: #fff;
+$black: #000;
+$turquoise: #007f89;
+$orange: #ff8039;
+
+$mainFont: 'Roboto', sans-serif;
+$headersFont: 'Righteous', sans-serif;
+$decorativeFont: 'Comforter', cursive;
+
+$standard-radius: 20px;
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body, html {
+  font-family: $mainFont;
+  background: $black;
+  color: $white;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+nav {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: $white;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      list-style: none;
+      width: 100px;
+    }
+  }
+
+  @media(max-width: 992px) {
+    right: 0;
+
+    li {
+      width: auto;
+    }
+  }
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  text-align: center;
+  margin: 50px 0 20px;
+}
+
+h1 {
+  font-size: 10rem;
+  background: url('../images/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg');
+  background-size: 20%;
+  background-clip: text;  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:before {
+    content: "My web";
+    top: -1rem;
+    left: -5rem;
+    transform: rotate(-10deg);
+    font-size: 5rem;
+  }
+
+  &:after {
+    content: "Roksana Rębiewska";
+    bottom: -2rem;
+    right: -4rem;
+    font-size: 4rem;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    display: block;
+    color: $white;
+    -webkit-text-fill-color: $white;
+    font-family: $decorativeFont;
+  }
+
+  @media(max-width: 992px) {
+    font-size: 4rem;
+    word-wrap: anywhere;
+    text-align: center;
+
+    &:before {
+      top: -4rem;
+    }
+
+    &:after {
+      line-height: 3rem;
+      bottom: -5rem;
+      right: -10rem;
+    }
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $headersFont;
+  padding-top: 10rem;
+
+  @media(max-width: 992px) {
+    margin: 0 50px;
+  }
+}
+
+#main {
+  height: 100vh;
+  position: relative;
+}
+
+#projects {
+  position: relative;
+  scroll-margin-top: 10rem;
+}
+
+#find {
+  position: relative;
+  scroll-margin-top: 10rem;
+}
+
+.btn {
+  border-radius: $standard-radius;
+  transition: all .3s linear;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin btnColor($theme) {
+  background: $theme;
+  width: 100px;
+  height: 30px;
+  margin: 50px 20px 20px;
+  color: $white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.non-active {
+    opacity: .5;
+    color: $black;
+  }
+}
+
+.btn--view {
+  @include btnColor($theme: $turquoise);
+}
+
+.div__btn--view {
+  text-align: center;
+}
+
+.div__btn--begin {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn--begin {
+  border: none;
+  font-size: 1rem;
+  color: $white;
+  background: none;
+
+  &.no-view {
+    display: none;
+  }
+}
+
+.projects--paragraph {
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 1rem;
+  font-family: $mainFont;
+
+  @media(max-width: 992px) {
+    margin: 0 50px;
+  }
+}
+
+.section__portfolio {
+  display: grid;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 20px auto 100px;
+
+  @media(max-width: 992px) {
+    margin: auto;
+    width: 80vw;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 10px 20px;
+    font-family: $headersFont;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px $black;
+  }
+}
+
+.section__portfolio.grid {
+  grid-template-columns: repeat(3, 1fr);
+
+  @media(max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+
+  h3 {
+    height: 120px;
+  }
+
+  .section__portfolio-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: url('../images/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg');
+    background-size: 100%;
+    padding-right: 20px;
+    border-radius: 20px;
+
+      p {
+        display: none;
+      }
+
+      .section__portfolio--project-preview {
+        width: 100%;
+        height: 200px;
+        margin: 0 0 -20px -20px;
+        border-radius: 20px;
+        border: 1px solid $white;
+        transition: background-size .5s ease;
+
+          &:hover {
+            background-size: 110% !important;
+          }
+      }
+  }
+}
+
+.section__portfolio.list {
+  grid-template-columns: 1fr;
+
+  h3 {    
+    @media(min-width: 993px) {
+      margin-top: 0;
+      text-align: left;
+    }
+    
+  }
+
+  .section__portfolio-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    text-align: left;
+
+    @media(max-width: 992px) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    p {
+      margin: 10px 20px;
+    }
+  }
+
+  .section__portfolio--project-name {
+    max-width: 600px;
+  }
+
+  .section__portfolio--project-preview {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    border: 1px solid $white;
+    transition: background-size .5s ease;
+
+      &:hover {
+        background-size: 110% !important;
+      }
+  }
+}
+
+.contact__box {
+  background: url('../images/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg');
+  background-size: 130%;
+  background-position: top;
+  max-width: 1200px;
+  min-height: 500px;
+  margin: 50px auto;
+  border-radius: $standard-radius;
+
+  h2 {
+    color: $black;
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100px;
+      margin: 50px;
+      transition: all .3s linear;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @media(max-width: 992px) {
+    // margin: 50px;
+    max-width: auto;
+    border-radius: 0;
+    min-height: auto;
+
+    h2 {
+      padding-top: 3rem;
+    }
+
+    section {
+      flex-direction: column;
+      text-align: center;
+      padding-bottom: 30px;
+
+      img {
+        margin: 20px;
+      }
+    }
+  }
+}

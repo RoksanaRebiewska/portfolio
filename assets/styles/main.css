@@ -1,0 +1,321 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body, html {
+  font-family: "Roboto", sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #fff;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+nav ul li {
+  list-style: none;
+  width: 100px;
+}
+@media (max-width: 992px) {
+  nav {
+    right: 0;
+  }
+  nav li {
+    width: auto;
+  }
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  text-align: center;
+  margin: 50px 0 20px;
+}
+
+h1 {
+  font-size: 10rem;
+  background: url("../images/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg");
+  background-size: 20%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1:before {
+  content: "My web";
+  top: -1rem;
+  left: -5rem;
+  transform: rotate(-10deg);
+  font-size: 5rem;
+}
+h1:after {
+  content: "Roksana Rębiewska";
+  bottom: -2rem;
+  right: -4rem;
+  font-size: 4rem;
+}
+h1:before, h1:after {
+  position: absolute;
+  display: block;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  font-family: "Comforter", cursive;
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 4rem;
+    word-wrap: anywhere;
+    text-align: center;
+  }
+  h1:before {
+    top: -4rem;
+  }
+  h1:after {
+    line-height: 3rem;
+    bottom: -5rem;
+    right: -10rem;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Righteous", sans-serif;
+  padding-top: 10rem;
+}
+@media (max-width: 992px) {
+  h2 {
+    margin: 0 50px;
+  }
+}
+
+#main {
+  height: 100vh;
+  position: relative;
+}
+
+#projects {
+  position: relative;
+  scroll-margin-top: 10rem;
+}
+
+#find {
+  position: relative;
+  scroll-margin-top: 10rem;
+}
+
+.btn {
+  border-radius: 20px;
+  transition: all 0.3s linear;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn--view {
+  background: #007f89;
+  width: 100px;
+  height: 30px;
+  margin: 50px 20px 20px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn--view.non-active {
+  opacity: 0.5;
+  color: #000;
+}
+
+.div__btn--view {
+  text-align: center;
+}
+
+.div__btn--begin {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn--begin {
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  background: none;
+}
+.btn--begin.no-view {
+  display: none;
+}
+
+.projects--paragraph {
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 992px) {
+  .projects--paragraph {
+    margin: 0 50px;
+  }
+}
+
+.section__portfolio {
+  display: grid;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 20px auto 100px;
+}
+@media (max-width: 992px) {
+  .section__portfolio {
+    margin: auto;
+    width: 80vw;
+  }
+}
+.section__portfolio h3 {
+  font-size: 2rem;
+  margin: 10px 20px;
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.section__portfolio.grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 992px) {
+  .section__portfolio.grid {
+    grid-template-columns: 1fr;
+  }
+}
+.section__portfolio.grid h3 {
+  height: 120px;
+}
+.section__portfolio.grid .section__portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: url("../images/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg");
+  background-size: 100%;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+.section__portfolio.grid .section__portfolio-wrapper p {
+  display: none;
+}
+.section__portfolio.grid .section__portfolio-wrapper .section__portfolio--project-preview {
+  width: 100%;
+  height: 200px;
+  margin: 0 0 -20px -20px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  transition: background-size 0.5s ease;
+}
+.section__portfolio.grid .section__portfolio-wrapper .section__portfolio--project-preview:hover {
+  background-size: 110% !important;
+}
+
+.section__portfolio.list {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 993px) {
+  .section__portfolio.list h3 {
+    margin-top: 0;
+    text-align: left;
+  }
+}
+.section__portfolio.list .section__portfolio-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  text-align: left;
+}
+@media (max-width: 992px) {
+  .section__portfolio.list .section__portfolio-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+.section__portfolio.list .section__portfolio-wrapper p {
+  margin: 10px 20px;
+}
+.section__portfolio.list .section__portfolio--project-name {
+  max-width: 600px;
+}
+.section__portfolio.list .section__portfolio--project-preview {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  transition: background-size 0.5s ease;
+}
+.section__portfolio.list .section__portfolio--project-preview:hover {
+  background-size: 110% !important;
+}
+
+.contact__box {
+  background: url("../images/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg");
+  background-size: 130%;
+  background-position: top;
+  max-width: 1200px;
+  min-height: 500px;
+  margin: 50px auto;
+  border-radius: 20px;
+}
+.contact__box h2 {
+  color: #000;
+}
+.contact__box section {
+  display: flex;
+  justify-content: center;
+}
+.contact__box section img {
+  width: 100px;
+  margin: 50px;
+  transition: all 0.3s linear;
+}
+.contact__box section img:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 992px) {
+  .contact__box {
+    max-width: auto;
+    border-radius: 0;
+    min-height: auto;
+  }
+  .contact__box h2 {
+    padding-top: 3rem;
+  }
+  .contact__box section {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .contact__box section img {
+    margin: 20px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
