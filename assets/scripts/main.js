@@ -1,3 +1,18 @@
+// hamburger menu
+
+hamburgerBar = document.getElementById('hamburger--bar');
+navMobile = document.querySelector('nav');
+
+hamburgerBar.addEventListener('click', () => {
+  hamburgerBar.classList.toggle('open');
+  navMobile.classList.toggle('open');
+});
+
+navMobile.addEventListener('click', () => {
+  hamburgerBar.classList.toggle('open');
+  navMobile.classList.toggle('open');
+});
+
 // begin button
 beginButton = document.querySelector('.btn--begin');
 beginButton.addEventListener('click', () => {

@@ -20,6 +20,49 @@ a {
   text-decoration: none;
 }
 
+.hamburger {
+  display: none;
+}
+@media (max-width: 992px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 99;
+    width: 2rem;
+  }
+  .hamburger #hamburger--bar:after, .hamburger #hamburger--bar:before, .hamburger #hamburger--bar {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    position: absolute;
+    transition: 0.5s;
+    content: "";
+  }
+  .hamburger #hamburger--bar {
+    top: 50%;
+    left: 10%;
+  }
+  .hamburger #hamburger--bar:before {
+    top: -16px;
+  }
+  .hamburger #hamburger--bar:after {
+    top: 16px;
+  }
+  .hamburger #hamburger--bar.open {
+    background: none;
+  }
+  .hamburger #hamburger--bar.open:before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  .hamburger #hamburger--bar.open:after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+}
+
 nav {
   position: absolute;
   top: 2rem;
@@ -36,14 +79,27 @@ nav ul li {
 }
 @media (max-width: 992px) {
   nav {
+    top: 0;
+    right: -15rem;
+    background: #171717;
+    background-size: 100%;
+    text-align: right;
+    padding: 20% 1.5rem 1rem 1.5rem;
+    transition: all 0.5s linear;
+  }
+  nav.open {
     right: 0;
+  }
+  nav ul {
+    flex-direction: column;
   }
   nav li {
     width: auto;
+    font-size: 1.5rem;
   }
 }
 
-header {
+.header--section {
   position: absolute;
   top: 50%;
   left: 50%;

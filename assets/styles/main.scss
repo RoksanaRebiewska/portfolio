@@ -6,6 +6,7 @@ $white: #fff;
 $black: #000;
 $turquoise: #007f89;
 $orange: #ff8039;
+$gray: #171717;
 
 $mainFont: 'Roboto', sans-serif;
 $headersFont: 'Righteous', sans-serif;
@@ -31,6 +32,58 @@ a {
   text-decoration: none;
 }
 
+.hamburger {
+  display: none;
+
+  @media (max-width: 992px) {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 99;
+    width: 2rem;
+
+    %hamburger--bar {
+      width: 50px;
+      height: 6px;
+      background: $white;
+      position: absolute;
+      transition: 0.5s;
+      content: "";
+    }
+
+    #hamburger--bar {
+      @extend %hamburger--bar;
+      top:50%;
+      left:10%;
+
+      &:before {
+        @extend %hamburger--bar;
+        top: -16px;
+      }
+
+      &:after {
+        @extend %hamburger--bar;
+        top: 16px;
+      }
+      
+      &.open {
+        background: none;
+      }
+
+      &.open:before {
+        top: 0;
+        transform:rotate(45deg); 
+      }
+
+      &.open:after {
+        top: 0;
+        transform:rotate(135deg);
+      }
+    }
+  }
+}
+
 nav {
   position: absolute;
   top: 2rem;
@@ -48,15 +101,30 @@ nav {
   }
 
   @media(max-width: 992px) {
-    right: 0;
+    top: 0;
+    right: -15rem;
+    background: $gray;
+    background-size: 100%;
+    text-align: right;
+    padding: 20% 1.5rem 1rem 1.5rem;
+    transition: all .5s linear;
+
+    &.open {
+      right: 0;
+    }
+
+    ul {
+      flex-direction: column;
+    }
 
     li {
       width: auto;
+      font-size: 1.5rem;
     }
   }
 }
 
-header {
+.header--section {
   position: absolute;
   top: 50%;
   left: 50%;
