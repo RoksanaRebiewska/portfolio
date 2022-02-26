@@ -1,5 +1,4 @@
 // hamburger menu
-
 hamburgerBar = document.getElementById('hamburger--bar');
 navMobile = document.querySelector('nav');
 
@@ -20,7 +19,6 @@ beginButton.addEventListener('click', () => {
 });
 
 //buttons in Portfolio section
-
 const gridButton = document.getElementById('grid-view-btn');
 const listButton = document.getElementById('list-view-btn');
 const portfolio = document.querySelector('.section__portfolio');
